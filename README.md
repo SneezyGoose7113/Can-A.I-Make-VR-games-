@@ -1,47 +1,43 @@
-# PROJECT ZERO — VR Field Test
+# PROJECT ZERO — V0.2
 
-A browser-based 3D training-range game designed for GitHub Pages. It supports desktop play and WebXR headsets/browsers that support immersive VR.
+V0.2 is a rebuilt GitHub Pages-compatible Three.js/WebXR prototype addressing the first bug report.
 
-## Publish with GitHub Pages
+## Publish
+Upload `index.html`, `style.css`, `game.js`, and `README.md` to the root of a GitHub repository. In **Settings → Pages**, select **Deploy from a branch**, choose `main` and `/ (root)`, and save. Open the HTTPS Pages URL after deployment.
 
-1. Create a new GitHub repository.
-2. Upload **all four project files** (`index.html`, `style.css`, `game.js`, `README.md`) to the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select `main` and `/ (root)`, then save.
-6. Wait for GitHub Pages to publish. Open the generated HTTPS address.
+Three.js and its WebXR helpers load from jsDelivr, so the game needs internet access.
 
-The game imports Three.js from jsDelivr, so the player needs an internet connection when loading it.
+## Desktop
+- WASD / arrows: move
+- Mouse: look (click game to capture)
+- Left click: fire
+- E: prime / safe
+- R: insert a spare energy cell
+- I: inspect
+- 1 / 2 / 3: select module
 
-## Controls
+## VR
+- Use the visible **Enter VR** button in a WebXR-capable browser/headset.
+- Left controller thumbstick: walk relative to head direction.
+- Left trigger: prime/safe (or reload when the charge is empty).
+- Right trigger: fire.
+- Right grip: toggle inspection.
+- Controller models plus stylized glove meshes are attached to the controller grips.
+- The emitter is attached to the right controller grip rather than the tracked camera.
 
-### Desktop
-- `W A S D` / arrow keys — move
-- Mouse — look around (click the game to capture the mouse)
-- Left click — fire energy pulse
-- `E` — prime / safe the emitter
-- `R` — recharge energy cell
-- `I` — inspect device
-- `1`, `2`, `3` — select attachment
+## V0.2 changes
+- Locomotion moved to a player rig, preserving headset tracking.
+- Collision resolution is horizontal and axis-separated against expanded obstacles.
+- VR controller grip models and visible stylized hands.
+- Smaller, more detailed PX-01 emitter with rails, sights, trigger guard, cell housing, indicator, and muzzle.
+- Held emitter is hidden if a desktop obstacle blocks the view-to-muzzle segment.
+- Four physical energy-cell pickups can be collected in the range; collected cells become spare inventory.
+- Reload consumes a spare cell and refills the current module.
+- Desktop HUD remains available; game status also updates in the HUD.
 
-### VR
-- Enter VR using the button in the lower-right corner (when supported).
-- Left controller thumbstick — move
-- Left controller trigger — prime / safe the emitter
-- Right controller trigger — fire
-- Right controller grip — inspect toggle
-
-## Current build
-
-- 3D training range with terrain, cover structures, and collision.
-- PX-01 fictional pulse emitter.
-- Three fictional energy configurations.
-- Energy-cell charge and recharge loop.
-- Five floating targets and a clear-range objective.
-- Desktop controls and WebXR controller input.
-
-## Compatibility notes
-
-WebXR immersive VR generally requires HTTPS and a compatible browser/headset. GitHub Pages provides HTTPS. Desktop mode is available in modern browsers with WebGL support. The game loads Three.js from a CDN.
-
-This is an initial playable foundation. Physical headset/controller testing still needs to be done on the target device. The device is a fictional sci-fi training tool, not a real firearm simulation.
+## Known limitations / test notes
+- WebXR behavior varies by headset/browser and needs testing on the actual target device.
+- Three.js is imported from a CDN.
+- VR hands are stylized glove meshes over standard controller models, not articulated skeletal hand tracking.
+- The VR version does not yet have a fully spatial, controller-operated menu; controls are available through controller inputs and game status is mirrored in the headset HUD where the browser supports the page overlay.
+- This build has not been physically tested on a headset in this environment.

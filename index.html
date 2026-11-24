@@ -1,54 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="theme-color" content="#08111d">
-  <title>PROJECT ZERO — VR Field Test</title>
-  <link rel="stylesheet" href="./style.css">
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
-      }
-    }
-  </script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#07111b"><title>PROJECT ZERO — V0.2</title>
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
 </head>
 <body>
-  <div id="loading"><div class="loader-mark">PZ</div><div>INITIALIZING FIELD SYSTEMS…</div></div>
-  <div id="hud">
-    <header><div class="brand">PROJECT <b>ZERO</b></div><div class="status"><span class="dot"></span> FIELD TEST</div></header>
-    <section class="mission"><small>ACTIVE OBJECTIVE</small><strong id="objective">Calibrate the emitter</strong><span id="objective-detail">Prime your emitter to begin the training simulation.</span></section>
-    <div class="reticle"><i></i><i></i><i></i><i></i></div>
-    <section class="weapon-panel">
-      <div class="weapon-name">PULSE EMITTER <span id="attachment-label">· BASE CONFIG</span></div>
-      <div class="ammo"><strong id="cell-count">12</strong><span>/ <span id="cell-capacity">12</span> CHARGE</span></div>
-      <div class="charge-track"><div id="charge-fill"></div></div>
-      <div class="weapon-state" id="weapon-state">EMITTER UNPRIMED</div>
-    </section>
-    <section class="target-counter"><span>TARGETS</span><strong id="target-count">0 / 5</strong></section>
-    <div id="toast"></div>
-    <div id="inspect-card" class="hidden">
-      <div class="inspect-heading">FIELD INSPECTION <button id="close-inspect" aria-label="Close inspection">×</button></div>
-      <div class="inspect-item"><span>PLATFORM</span><b>PX-01 Pulse Emitter</b></div>
-      <div class="inspect-item"><span>POWER SOURCE</span><b id="inspect-cell">12-unit energy cell</b></div>
-      <div class="inspect-item"><span>CONFIGURATION</span><b id="inspect-attachment">Base configuration</b></div>
-      <div class="inspect-item"><span>CONDITION</span><b>Nominal</b></div>
-      <p>A fictional training device. Its energy system and handling are intentionally stylized.</p>
-    </div>
-    <div class="controls-hint" id="controls-hint">WASD MOVE · MOUSE LOOK · CLICK FIRE · E PRIME · R RECHARGE · I INSPECT · 1–3 ATTACHMENTS</div>
-  </div>
-  <div id="start-screen">
-    <div class="start-card">
-      <div class="eyebrow">GOOSE INDUSTRIES // SIMULATION DIVISION</div>
-      <h1>PROJECT <span>ZERO</span></h1>
-      <p>A virtual field test for the PX-01 pulse emitter. Clear the training range and experiment with modular energy attachments.</p>
-      <div class="start-meta"><span>01 / TRAINING RANGE</span><span>VR READY</span><span>DESKTOP READY</span></div>
-      <button id="start-button">ENTER SIMULATION</button>
-      <small>Desktop: click to lock mouse. VR: use the Enter VR button after starting.</small>
-    </div>
-  </div>
-  <script type="module" src="./game.js"></script>
-</body>
-</html>
+<div id="loading"><div class="loader-mark">PZ</div><div>REBUILDING FIELD SYSTEMS…</div></div>
+<div id="hud">
+<header><div class="brand">PROJECT <b>ZERO</b></div><div class="status"><span class="dot"></span> V0.2 · FIELD TEST</div></header>
+<section class="mission"><small>ACTIVE OBJECTIVE</small><strong id="objective">Recover the energy cells</strong><span id="objective-detail">Collect glowing cells, then clear the five training drones.</span></section>
+<div class="reticle"><i></i><i></i><i></i><i></i></div>
+<section class="weapon-panel"><div class="weapon-name">PX-01 PULSE EMITTER <span id="attachment-label">· BASE</span></div><div class="ammo"><strong id="cell-count">12</strong><span>/ <span id="cell-capacity">12</span> CHARGE</span></div><div class="charge-track"><div id="charge-fill"></div></div><div class="weapon-state" id="weapon-state">SAFE · CELL READY</div><div class="inventory">SPARE CELLS <b id="spare-count">2</b></div></section>
+<section class="target-counter"><span>TARGETS</span><strong id="target-count">0 / 5</strong></section>
+<div id="toast"></div>
+<div id="inspect-card" class="hidden"><div class="inspect-heading">DEVICE INSPECTION <button id="close-inspect">×</button></div><div class="inspect-item"><span>PLATFORM</span><b>PX-01 Pulse Emitter</b></div><div class="inspect-item"><span>POWER SOURCE</span><b id="inspect-cell">12-unit cell</b></div><div class="inspect-item"><span>MODULE</span><b id="inspect-attachment">Base configuration</b></div><div class="inspect-item"><span>SPARES</span><b id="inspect-spares">2 cells</b></div><p>Fictional sci-fi training equipment. Modular energy system.</p></div>
+<div class="controls-hint" id="controls-hint">WASD MOVE · MOUSE LOOK · CLICK FIRE · E PRIME · R INSERT CELL · I INSPECT · 1–3 MODULES</div>
+</div>
+<div id="start-screen"><div class="start-card"><div class="eyebrow">GOOSE INDUSTRIES // SIMULATION DIVISION</div><h1>PROJECT <span>ZERO</span></h1><p>PX-01 field training simulation. V0.2 rebuild: hand-mounted equipment, physical energy cells, improved locomotion, collision, and VR controls.</p><div class="start-meta"><span>02 / TRAINING RANGE</span><span>WEBXR</span><span>DESKTOP</span></div><button id="start-button">ENTER SIMULATION</button><small>Desktop: click to capture mouse. VR: enter immersive mode, then use both controllers.</small></div></div>
+<script type="module" src="./game.js"></script>
+</body></html>
